@@ -32,12 +32,9 @@ type Cap = Record<Lang, string>
 export const gallery: { src: string; cap: Cap; tall?: boolean }[] = [
   { src: m(31), cap: { fr: 'Coucher de soleil antarctique depuis le pont', en: 'Antarctic sunset from the deck', es: 'Atardecer antártico desde cubierta' } },
   { src: m(23), cap: { fr: 'Baleine à bosse en plein saut', en: 'Humpback whale breaching', es: 'Ballena jorobada saltando' } },
-  { src: m(10), cap: { fr: 'Empanadas maison dans le carré', en: 'Homemade empanadas in the saloon', es: 'Empanadas caseras en el salón' } },
   { src: m(27), cap: { fr: 'Manchot royal', en: 'King penguin', es: 'Pingüino rey' } },
-  { src: m(13), cap: { fr: 'À la barre', en: 'At the helm', es: 'Al timón' } },
   { src: m(28), cap: { fr: 'Manchots papous en plein vol', en: 'Gentoo penguins porpoising', es: 'Pingüinos papúa en pleno salto' } },
   { src: m(20), cap: { fr: 'Phoque léopard', en: 'Leopard seal', es: 'Foca leopardo' } },
-  { src: m(9), cap: { fr: 'Fête à bord', en: 'Celebration on board', es: 'Fiesta a bordo' } },
   { src: m(17), cap: { fr: "Arche de glace", en: "Ice arch", es: "Arco de hielo" }, tall: true },
   { src: m(25), cap: { fr: 'Manchot à jugulaire', en: 'Chinstrap penguin', es: 'Pingüino barbijo' }, tall: true },
   { src: m(14), cap: { fr: 'Baleine en plongée', en: 'Whale diving', es: 'Ballena sumergiéndose' } },
@@ -52,7 +49,6 @@ export const gallery: { src: string; cap: Cap; tall?: boolean }[] = [
   { src: m(33), cap: { fr: 'Rafales et embruns', en: 'Gusts and sea spray', es: 'Ráfagas y rociones' } },
   { src: m(19), cap: { fr: 'Phoques crabiers sur la glace', en: 'Crabeater seals on the ice', es: 'Focas cangrejeras sobre el hielo' } },
   { src: m(29), cap: { fr: 'Poussin de manchot papou', en: 'Gentoo penguin chick', es: 'Pichón de pingüino papúa' } },
-  { src: m(11), cap: { fr: 'L’équipage au travail', en: 'The crew at work', es: 'La tripulación en acción' } },
   { src: m(15), cap: { fr: 'Manchot papou sur la grève', en: 'Gentoo penguin on the shore', es: 'Pingüino papúa en la costa' } },
   { src: m(18), cap: { fr: 'Goéland au-dessus des glaciers', en: 'Gull above the glaciers', es: 'Gaviota sobre los glaciares' } },
 ]
