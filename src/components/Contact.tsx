@@ -3,6 +3,7 @@ import { useLang } from '../i18n'
 import { brand, img } from '../assets'
 import { A, EMAIL, Icon, PHONE, PHONE_TEL, SOCIAL } from './Header'
 import { WhatsAppIcon, whatsappHref } from './WhatsAppFloat'
+import { Devices } from './Devices'
 
 export function Contact() {
   const { t, lang } = useLang()
@@ -65,7 +66,7 @@ export function Footer() {
   ]
   return (
     <footer className="bg-brand text-white">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-[1.2fr_1.6fr_1fr] md:px-8">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-2 md:px-8 lg:grid-cols-[1fr_1.25fr_1.45fr]">
         <div>
           <img src={brand.logoWhite} alt="Tánana Expédition" className="h-24 w-auto" />
           <address className="mt-6 space-y-1.5 text-sm not-italic text-white/85">
@@ -74,6 +75,7 @@ export function Footer() {
             <p><a href={`mailto:${EMAIL}`} className="hover:underline">{EMAIL}</a></p>
             <p><a href={`tel:${PHONE_TEL}`} className="hover:underline">{PHONE}</a></p>
           </address>
+          <img src={brand.rif} alt="RIF" className="mt-8 h-16 w-16 rounded-lg bg-white object-contain p-1" />
         </div>
         <div>
           <p className="leading-relaxed text-white/85">{t.footer.about}</p>
@@ -82,13 +84,14 @@ export function Footer() {
             {links.map(([h, l]) => <li key={h}><A href={h} className="text-white/85 hover:text-white hover:underline">{l}</A></li>)}
           </ul>
         </div>
-        <div>
-          <p className="font-head text-xs font-semibold uppercase tracking-[.2em] text-white/60">{t.footer.follow}</p>
-          <div className="mt-4 flex gap-3">
-            <a href={SOCIAL.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-11 w-11 place-items-center rounded-full bg-white/10 transition hover:bg-white hover:text-brand">{Icon.instagram}</a>
-            <a href={SOCIAL.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="grid h-11 w-11 place-items-center rounded-full bg-white/10 transition hover:bg-white hover:text-brand">{Icon.facebook}</a>
+        {/* Dispositivos + redes, como el bloque del footer del sitio actual */}
+        <div className="flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
+          <Devices className="max-w-md" />
+          <p className="mt-8 font-head text-xl font-light">{t.footer.follow}</p>
+          <div className="mt-4 flex gap-4">
+            <a href={SOCIAL.instagram} target="_blank" rel="noopener" aria-label="Instagram" className="grid h-12 w-12 place-items-center rounded-full bg-white text-brand transition hover:scale-110">{Icon.instagram}</a>
+            <a href={SOCIAL.facebook} target="_blank" rel="noopener" aria-label="Facebook" className="grid h-12 w-12 place-items-center rounded-full bg-white text-brand transition hover:scale-110">{Icon.facebook}</a>
           </div>
-          <img src={brand.rif} alt="RIF" className="mt-8 h-16 w-16 rounded-lg bg-white object-contain p-1" />
         </div>
       </div>
       <div className="border-t border-white/15">
