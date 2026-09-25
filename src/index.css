@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Paleta y tipografías del sitio actual de Tánana */
+@theme {
+  --color-brand: #2e5086;      /* azul Tánana */
+  --color-brand-dark: #1f3a63;
+  --color-north: #706659;      /* marrón "Gran Norte" */
+  --color-paper: #fafafa;
+  --color-ink: #1b1f24;
+  --color-mute: #6b7280;
+
+  --font-script: "Dancing Script", cursive;
+  --font-head: "Raleway", sans-serif;
+  --font-sans: "Nunito Sans", sans-serif;   /* reemplazo web de Avenir Light */
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: var(--font-head); }
+
+/* Aparición al hacer scroll */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* Ken Burns suave en la portada */
+@keyframes kenburns { from { transform: scale(1.02); } to { transform: scale(1.12); } }
+.kenburns { animation: kenburns 9s ease-out both; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: .6rem;
+  padding: .95rem 1.6rem; border-radius: 999px;
+  font-family: var(--font-head); font-weight: 600; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase;
+  transition: background .3s, color .3s, transform .3s, box-shadow .3s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -12px rgb(0 0 0 / .45); }
+.btn-brand { background: var(--color-brand); color: #fff; }
+.btn-brand:hover { background: var(--color-brand-dark); }
+.btn-light { background: rgb(255 255 255 / .9); color: var(--color-ink); }
+.btn-light:hover { background: #fff; }
+.btn-ghost { border: 1px solid rgb(255 255 255 / .7); color: #fff; }
+.btn-ghost:hover { background: #fff; color: var(--color-ink); }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .rise, .kenburns { animation: none !important; transition: none !important; opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}
